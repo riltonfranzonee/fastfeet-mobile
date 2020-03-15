@@ -35,5 +35,14 @@ module.exports = {
     ],
     'import/prefer-default-export': 'off',
     'no-console': 'off',
+    "no-param-reassign": "off",
+
+  },
+  settings: {
+    "import/resolver": {
+      "babel-plugin-root-import": {
+        rootPathSuffix: "src"
+      },
+    },
   },
 };
