@@ -22,9 +22,12 @@ export default function App() {
         tabBarOptions={{
           activeTintColor: '#7D40E7',
           inactiveTintColor: '#999999',
-
           labelStyle: {
             fontSize: 13,
+            marginTop: -10,
+          },
+          tabStyle: {
+            height: 55,
           },
         }}
       >
