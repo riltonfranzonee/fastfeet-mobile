@@ -36,6 +36,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-console': 'off',
     "no-param-reassign": "off",
+    "react/display-name": "off"
 
   },
   settings: {
