@@ -4,12 +4,15 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import PropTypes from 'prop-types';
+
 import SignIn from './pages/SignIn';
 import Dashboard from './pages/Dashboard';
-import Details from './pages/Details';
 import Profile from './pages/Profile';
+import Details from './pages/Details';
+import RegisterProblem from './pages/RegisterProblem';
+import ViewProblem from './pages/ViewProblem';
+import Confirm from './pages/Confirm';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -31,6 +34,39 @@ export default function App() {
           options={{
             headerBackTitleVisible: false,
             headerTitle: 'Detalhes da encomenda',
+            headerTitleStyle: { fontWeight: 'bold' },
+            headerTransparent: true,
+            headerTintColor: '#ffffff',
+          }}
+        />
+        <Stack.Screen
+          name="RegisterProblem"
+          component={RegisterProblem}
+          options={{
+            headerBackTitleVisible: false,
+            headerTitle: 'Informar problema',
+            headerTitleStyle: { fontWeight: 'bold' },
+            headerTransparent: true,
+            headerTintColor: '#ffffff',
+          }}
+        />
+        <Stack.Screen
+          name="ViewProblem"
+          component={ViewProblem}
+          options={{
+            headerBackTitleVisible: false,
+            headerTitle: 'Visualizar problemas',
+            headerTitleStyle: { fontWeight: 'bold' },
+            headerTransparent: true,
+            headerTintColor: '#ffffff',
+          }}
+        />
+        <Stack.Screen
+          name="Confirm"
+          component={Confirm}
+          options={{
+            headerBackTitleVisible: false,
+            headerTitle: 'Confirmar entrega',
             headerTitleStyle: { fontWeight: 'bold' },
             headerTransparent: true,
             headerTintColor: '#ffffff',

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import PropTypes from 'prop-types';
 import { utcToZonedTime, format } from 'date-fns-tz';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -25,6 +26,7 @@ const pattern = 'dd/MM/yyyy';
 const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
 
 export default function Details({ route }) {
+  const navigation = useNavigation();
   const { delivery } = route.params;
   const { recipient } = delivery;
 
@@ -93,15 +95,25 @@ export default function Details({ route }) {
           </CardDate>
         </CardProgress>
         <ButtonsWrapper>
-          <AddProblemButton>
+          <AddProblemButton
+            onPress={() =>
+              navigation.navigate('RegisterProblem', { id: delivery.id })
+            }
+          >
             <Icon name="close-circle-outline" size={22} color="#E74040" />
             <ButtonText>Informar Problema</ButtonText>
           </AddProblemButton>
-          <ViewProblemButton>
+          <ViewProblemButton
+            onPress={() =>
+              navigation.navigate('ViewProblem', { id: delivery.id })
+            }
+          >
             <Icon name="information-outline" size={22} color="#E7BA40" />
             <ButtonText>Visualizar Problemas</ButtonText>
           </ViewProblemButton>
-          <ConfirmButton>
+          <ConfirmButton
+            onPress={() => navigation.navigate('Confirm', { id: delivery.id })}
+          >
             <Icon name="check-circle-outline" size={22} color="#7D40E7" />
             <ButtonText>Confirmar entrega</ButtonText>
           </ConfirmButton>
