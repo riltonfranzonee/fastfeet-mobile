@@ -8,6 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import PropTypes from 'prop-types';
 import SignIn from './pages/SignIn';
 import Dashboard from './pages/Dashboard';
+import Details from './pages/Details';
 import Profile from './pages/Profile';
 
 const Stack = createStackNavigator();
@@ -15,6 +16,19 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   const signed = useSelector(state => state.auth.signed);
+
+  function DashboardRoot() {
+    return (
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Dashboard"
+          component={Dashboard}
+          options={{ headerMode: 'screen', headerShown: false }}
+        />
+        <Stack.Screen name="Details" component={Details} />
+      </Stack.Navigator>
+    );
+  }
 
   function Root() {
     return (
@@ -33,7 +47,7 @@ export default function App() {
       >
         <Tab.Screen
           name="Entregas"
-          component={Dashboard}
+          component={DashboardRoot}
           options={{
             tabBarIcon: ({ focused }) => (
               <Icon

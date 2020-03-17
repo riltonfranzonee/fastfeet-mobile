@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
 import { utcToZonedTime, format } from 'date-fns-tz';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -53,6 +54,8 @@ function Card({ delivery }) {
   const zonedDate = utcToZonedTime(delivery.created_at, timeZone);
   const formattedDate = format(zonedDate, pattern);
 
+  const navigation = useNavigation();
+
   return (
     <CardContainer>
       <CardHeader>
@@ -90,7 +93,9 @@ function Card({ delivery }) {
           <InfoTitle>Cidade</InfoTitle>
           <InfoData>{delivery.recipient.city}</InfoData>
         </Info>
-        <DetailsButton>
+        <DetailsButton
+          onPress={() => navigation.navigate('Details', { delivery })}
+        >
           <DetailsText>Ver detalhes</DetailsText>
         </DetailsButton>
       </CardFooter>
