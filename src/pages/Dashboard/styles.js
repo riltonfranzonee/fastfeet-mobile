@@ -86,7 +86,7 @@ export const CardContainer = styled.View`
 export const CardHeader = styled.View`
   flex-direction: row;
   align-items: center;
-  margin: 5px 0 0 20px;
+  margin: 8px 0 0 15px;
 `;
 
 export const CardHeaderText = styled.Text`
@@ -94,4 +94,36 @@ export const CardHeaderText = styled.Text`
   font-weight: bold;
   font-size: 14px;
   margin-left: 10px;
+`;
+
+export const CardFooter = styled.View`
+  flex-direction: row;
+  height: 65px;
+  background-color: #f8f9fd;
+  padding: 0 15px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+`;
+
+export const Info = styled.View``;
+
+export const InfoTitle = styled.Text`
+  color: #999999;
+  font-size: 8px;
+`;
+
+export const InfoData = styled.Text`
+  color: #444444;
+  font-weight: bold;
+  font-size: 12px;
+`;
+
+export const DetailsButton = styled.TouchableOpacity``;
+
+export const DetailsText = styled.Text`
+  color: #7d40e7;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 5px;
 `;
