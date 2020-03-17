@@ -65,6 +65,26 @@ export const OptionsWrapper = styled.View`
   justify-content: space-between;
 `;
 
+export const PendingOption = styled.TouchableOpacity`
+  ${props =>
+    props.selected &&
+    css`
+      border-bottom-width: 1px;
+      border-style: solid;
+      border-color: #7d40e7;
+    `}
+`;
+
+export const DeliveredOption = styled.TouchableOpacity`
+  ${props =>
+    props.selected &&
+    css`
+      border-bottom-width: 1px;
+      border-style: solid;
+      border-color: #7d40e7;
+    `}
+`;
+
 export const Option = styled.Text`
   font-size: 12px;
   font-weight: bold;

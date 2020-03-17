@@ -20,6 +20,8 @@ import {
   TopRow,
   Title,
   OptionsWrapper,
+  PendingOption,
+  DeliveredOption,
   Option,
   DeliveriesList,
   CardContainer,
@@ -70,21 +72,29 @@ export default function Dashboard() {
   const dispatch = useDispatch();
 
   const [deliveries, setDeliveries] = useState([]);
+  const [pendingSelected, setPendingSelected] = useState(true);
 
   function handleLogout() {
     dispatch(signOut());
   }
 
-  async function loadData(delivered = 'not') {
+  async function loadData(pending) {
+    if (pending) {
+      const response = await api.get(
+        `deliveryman/${user.id}/deliveries?delivered=not`
+      );
+      setDeliveries(response.data);
+      return;
+    }
     const response = await api.get(
-      `deliveryman/${user.id}/deliveries?delivered=${delivered}`
+      `deliveryman/${user.id}/deliveries?delivered=yes`
     );
     setDeliveries(response.data);
   }
 
   useEffect(() => {
-    loadData();
-  }, []);
+    loadData(pendingSelected);
+  }, [pendingSelected]);
 
   return (
     <Container>
@@ -112,8 +122,18 @@ export default function Dashboard() {
       <TopRow>
         <Title>Entregas</Title>
         <OptionsWrapper>
-          <Option selected>Pendentes</Option>
-          <Option>Entregues</Option>
+          <PendingOption
+            selected={pendingSelected}
+            onPress={() => setPendingSelected(true)}
+          >
+            <Option selected={pendingSelected}>Pendentes</Option>
+          </PendingOption>
+          <DeliveredOption
+            selected={!pendingSelected}
+            onPress={() => setPendingSelected(false)}
+          >
+            <Option selected={!pendingSelected}>Entregues</Option>
+          </DeliveredOption>
         </OptionsWrapper>
       </TopRow>
       <DeliveriesList
