@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { utcToZonedTime, format } from 'date-fns-tz';
 
@@ -33,6 +34,8 @@ import {
   InfoData,
   DetailsButton,
   DetailsText,
+  EmptyMessage,
+  EmptyText,
 } from './styles';
 
 import api from '~/services/api';
@@ -145,13 +148,21 @@ export default function Dashboard() {
       </TopRow>
       {isLoading ? (
         <ActivityIndicator size="large" />
-      ) : (
+      ) : deliveries.length >= 1 ? (
         <DeliveriesList
           data={deliveries}
           keyExtractor={item => item.id}
           renderItem={({ item }) => <Card delivery={item} />}
         />
+      ) : (
+        <EmptyMessage>
+          <EmptyText>Por enquanto não temos nada aqui :/</EmptyText>
+        </EmptyMessage>
       )}
     </Container>
   );
 }
+
+Card.propTypes = {
+  delivery: PropTypes.object,
+};

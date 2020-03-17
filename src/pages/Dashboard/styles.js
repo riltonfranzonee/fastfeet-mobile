@@ -147,3 +147,13 @@ export const DetailsText = styled.Text`
   font-size: 12px;
   margin-top: 5px;
 `;
+
+export const EmptyMessage = styled.View`
+  margin: auto 0;
+`;
+
+export const EmptyText = styled.Text`
+  color: #444444;
+  font-weight: bold;
+  font-size: 18px;
+`;
