@@ -157,3 +157,46 @@ export const EmptyText = styled.Text`
   font-weight: bold;
   font-size: 18px;
 `;
+
+export const CardBody = styled.View`
+  align-items: center;
+`;
+
+export const ProgressBar = styled.View`
+  margin-top: 20px;
+  position: relative;
+  height: 44px;
+  width: ${`${Dimensions.get('window').width * 0.7}px`};
+`;
+
+export const PointWrapper = styled.View`
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const Line = styled.View`
+  width: 100%;
+  height: 1px;
+  background-color: #7d40e7;
+  position: absolute;
+`;
+
+export const Point = styled.View`
+  width: 11px;
+  height: 11px;
+  border-radius: 5.5px;
+  background-color: ${props => (props.completed ? '#7d40e7' : '#ffffff')};
+  border: 1px solid #7d40e7;
+`;
+
+export const PointText = styled.Text`
+  position: absolute;
+  align-self: center;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 8.5px;
+  width: 52px;
+  color: #999999;
+`;

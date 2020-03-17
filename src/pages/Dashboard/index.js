@@ -28,6 +28,12 @@ import {
   CardContainer,
   CardHeader,
   CardHeaderText,
+  CardBody,
+  ProgressBar,
+  PointWrapper,
+  Line,
+  Point,
+  PointText,
   CardFooter,
   Info,
   InfoTitle,
@@ -53,6 +59,28 @@ function Card({ delivery }) {
         <Icon name="truck" color="#7D40E7" size={27} />
         <CardHeaderText>{`Encomenda ${delivery.id}`}</CardHeaderText>
       </CardHeader>
+      <CardBody>
+        <ProgressBar>
+          <PointWrapper>
+            <Line />
+            <>
+              <Point
+                completed={delivery.start_date === null || delivery.start_date}
+              >
+                <PointText>Aguardando Retirada</PointText>
+              </Point>
+
+              <Point completed={delivery.start_date}>
+                <PointText>Retirada</PointText>
+              </Point>
+
+              <Point completed={delivery.end_date}>
+                <PointText>Entregue</PointText>
+              </Point>
+            </>
+          </PointWrapper>
+        </ProgressBar>
+      </CardBody>
       <CardFooter>
         <Info>
           <InfoTitle>Data</InfoTitle>
