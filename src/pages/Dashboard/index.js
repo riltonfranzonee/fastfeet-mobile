@@ -4,7 +4,7 @@ import { utcToZonedTime, format } from 'date-fns-tz';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { Text } from 'react-native';
+import { ActivityIndicator } from 'react-native';
 
 import { signOut } from '~/store/modules/auth/actions';
 
@@ -73,6 +73,7 @@ export default function Dashboard() {
 
   const [deliveries, setDeliveries] = useState([]);
   const [pendingSelected, setPendingSelected] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleLogout() {
     dispatch(signOut());
@@ -80,15 +81,21 @@ export default function Dashboard() {
 
   async function loadData(pending) {
     if (pending) {
+      setIsLoading(true);
       const response = await api.get(
         `deliveryman/${user.id}/deliveries?delivered=not`
       );
+      setIsLoading(false);
       setDeliveries(response.data);
       return;
     }
+    setIsLoading(true);
+
     const response = await api.get(
       `deliveryman/${user.id}/deliveries?delivered=yes`
     );
+    setIsLoading(false);
+
     setDeliveries(response.data);
   }
 
@@ -136,11 +143,15 @@ export default function Dashboard() {
           </DeliveredOption>
         </OptionsWrapper>
       </TopRow>
-      <DeliveriesList
-        data={deliveries}
-        keyExtractor={item => item.id}
-        renderItem={({ item }) => <Card delivery={item} />}
-      />
+      {isLoading ? (
+        <ActivityIndicator size="large" />
+      ) : (
+        <DeliveriesList
+          data={deliveries}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => <Card delivery={item} />}
+        />
+      )}
     </Container>
   );
 }
