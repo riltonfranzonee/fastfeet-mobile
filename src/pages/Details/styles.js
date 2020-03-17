@@ -55,7 +55,7 @@ export const CardText = styled.Text`
 
 export const CardProgress = styled.View`
   margin-top: 10px;
-  height: 190px;
+  height: 170px;
   width: 85%;
   background-color: #ffffff;
   border: 1px solid #0000001a;
@@ -63,7 +63,7 @@ export const CardProgress = styled.View`
 `;
 
 export const CardDate = styled.View`
-  margin-top: 20px;
+  margin-top: 10px;
   flex-direction: row;
   justify-content: space-between;
   width: 95%;
