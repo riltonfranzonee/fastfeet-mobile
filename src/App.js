@@ -25,7 +25,17 @@ export default function App() {
           component={Dashboard}
           options={{ headerMode: 'screen', headerShown: false }}
         />
-        <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen
+          name="Details"
+          component={Details}
+          options={{
+            headerBackTitleVisible: false,
+            headerTitle: 'Detalhes da encomenda',
+            headerTitleStyle: { fontWeight: 'bold' },
+            headerTransparent: true,
+            headerTintColor: '#ffffff',
+          }}
+        />
       </Stack.Navigator>
     );
   }
