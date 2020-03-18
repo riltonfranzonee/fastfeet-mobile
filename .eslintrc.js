@@ -38,6 +38,7 @@ module.exports = {
     "no-param-reassign": "off",
     "react/display-name": "off",
     'no-nested-ternary': 'off',
+    'camelcase': 'off'
 
   },
   settings: {

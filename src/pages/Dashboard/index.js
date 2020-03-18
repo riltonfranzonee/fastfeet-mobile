@@ -67,13 +67,11 @@ function Card({ delivery }) {
           <PointWrapper>
             <Line />
             <>
-              <Point
-                completed={delivery.start_date === null || delivery.start_date}
-              >
+              <Point completed>
                 <PointText>Aguardando Retirada</PointText>
               </Point>
 
-              <Point completed={delivery.start_date}>
+              <Point completed={delivery.start_date || delivery.end_date}>
                 <PointText>Retirada</PointText>
               </Point>
 
