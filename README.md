@@ -55,7 +55,7 @@ This project is a full control system for a fictional shipping company called Fa
  
 :wrench: Used technologies:
 ----------------------
-This mobile application handles with a lot of features such as data persistence, api calls and use of camera. For the data persistence I found that Redux would be the best fit. I've also used other libraries and technologies to help me build this up, take a look at some of them: 
+The mobile version of the application handles with a lot of features such as data persistence, api calls and use of camera. For the data persistence I found that Redux would be the best fit. I've also used other libraries and technologies to help me build this up, take a look at some of them: 
 
 - [**React Native**](https://reactnative.dev/)
 - [**Redux**](https://redux.js.org/)
