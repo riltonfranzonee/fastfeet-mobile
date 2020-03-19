@@ -55,15 +55,21 @@ This project is a full control system for a fictional shipping company called Fa
  
 :wrench: Used technologies:
 ----------------------
-To develop the mobile version for this application I have used the following technologies:
+This mobile application handles with a lot of features such as data persistence, api calls and use of camera. For the data persistence I found that Redux would be the best fit. I've also used other libraries and technologies to help me build this up, take a look at some of them: 
 
 - [**React Native**](https://reactnative.dev/)
-- [**Styled Components**](https://styled-components.com/)
+- [**Redux**](https://redux.js.org/)
+- [**Redux Saga**](https://redux-saga.js.org/)
 - [**React Native Camera**](https://react-native-community.github.io/react-native-camera/)
 - [**React Native Camera Hooks**](https://github.com/reime005/react-native-camera-hooks)
+- [**Styled Components**](https://styled-components.com/)
 - [**React Native Vector Icons**](https://oblador.github.io/react-native-vector-icons/)
 - [**Axios**](https://github.com/axios/axios)
 - [**date-fns**](https://date-fns.org/docs/Getting-Started)
+- [**Eslint**](https://eslint.org/)
+- [**Prettier**](https://prettier.io/)
+- [**EditorConfig**](https://editorconfig.org/)
+
 
 ## :information_source: How to use this project
 To clone and run this application, you'll need Git, NodeJS, Yarn and React Native. Input theese lines in your command line:
