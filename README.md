@@ -29,7 +29,7 @@ This project is a full control system for a fictional shipping company called Fa
     <td align="center">Register Problems Screen</td>
   </tr>
   <tr>
-    <td><img width="370" height="800" src="https://user-images.githubusercontent.com/58868651/77014708-b0574c00-6951-11ea-9ea8-25be81992501.png"></td>
+    <td><img width="370" height="800" src="https://user-images.githubusercontent.com/58868651/77014705-af261f00-6951-11ea-9b99-e9fbd447602c.png"></td>
     <td><img width="370" height="800" src="https://user-images.githubusercontent.com/58868651/77014706-afbeb580-6951-11ea-9cdf-cb02f874948f.png"></td>
   </tr>
  </table>
@@ -40,8 +40,8 @@ This project is a full control system for a fictional shipping company called Fa
     <td align="center">Confirm Delivery Screen</td>
   </tr>
   <tr>
-    <td><img width="370" height="800" src="https://user-images.githubusercontent.com/58868651/77014705-af261f00-6951-11ea-9b99-e9fbd447602c.png"></td>
-    <td><img width="370" height="800" src="https://user-images.githubusercontent.com/58868651/77014706-afbeb580-6951-11ea-9cdf-cb02f874948f.png"></td>
+    <td><img width="370" height="800" src="https://user-images.githubusercontent.com/58868651/77014708-b0574c00-6951-11ea-9ea8-25be81992501.png"></td>
+    <td><img width="370" height="800" src="https://user-images.githubusercontent.com/58868651/77021334-2ca75a80-6965-11ea-876d-a025fb8c0397.png"></td>
   </tr>
  </table>
   <table>
