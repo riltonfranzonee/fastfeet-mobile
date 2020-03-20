@@ -72,7 +72,7 @@ The mobile version of the application handles with a lot of features such as dat
 
 
 ## :information_source: How to use this project
-To clone and run this application, you'll need Git, NodeJS, Yarn and React Native. Input theese lines in your command line:
+To clone and run this application, you'll need Git, NodeJS, Yarn and React Native. Input these lines in your command line:
 
 ```bash
 # Clone this repository
