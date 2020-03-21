@@ -72,7 +72,9 @@ The mobile version of the application handles with a lot of features such as dat
 
 
 ## :information_source: How to use this project
-To clone and run this application, you'll need Git, NodeJS, Yarn and React Native. Input these lines in your command line:
+To clone and run this application, you'll need Git, NodeJS, Yarn and React Native. 
+
+You just need to run the following commands:
 
 ```bash
 # Clone this repository
@@ -88,6 +90,7 @@ $ yarn
 $ react-native run-ios
 ```
 
+Make sure you have the [**RESTful API**](https://github.com/riltonfranzonee/fastfeet-api) up and running.
 
 
 :speech_balloon: Reach me
