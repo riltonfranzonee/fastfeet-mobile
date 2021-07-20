@@ -22,7 +22,7 @@
     "polished": "^3.4.4",
     "prop-types": "^15.7.2",
     "react": "16.9.0",
-    "react-native": "0.61.5",
+    "react-native": "0.62.3",
     "react-native-camera": "^3.19.2",
     "react-native-camera-hooks": "^0.3.1",
     "react-native-gesture-handler": "^1.6.0",
